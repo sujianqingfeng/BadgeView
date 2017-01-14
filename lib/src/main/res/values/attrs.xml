@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <declare-styleable name="BadgeView">
+        <attr name="badge_bgColor" format="color|reference" />
+        <attr name="badge_textColor" format="color|reference" />
+        <attr name="badge_textSize" format="dimension|reference" />
+        <attr name="badge_padding" format="dimension|reference" />
+        <attr name="badge_gravity" format="enum">
+            <enum name="rightTop" value="0" />
+            <enum name="rightCenter" value="1" />
+            <enum name="rightBottom" value="2" />
+        </attr>
+    </declare-styleable>
+</resources>

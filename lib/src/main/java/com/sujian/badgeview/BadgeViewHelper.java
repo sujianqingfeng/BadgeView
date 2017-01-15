@@ -40,7 +40,8 @@ public class BadgeViewHelper {
     private boolean mIsShowDrawable;
     private Rect mBadgeNumberRect;
     private RectF mBadgeRectF;
-
+    private int mBagdeHorzontalMargin;
+    private int mBagdeVerticalMargin;
 
     public BadgeViewHelper(BadgeInterface badgeInterface, Context context, AttributeSet attributeSet,BadgeGravity badgeGravity) {
         mBadgeInterface = badgeInterface;
@@ -81,6 +82,10 @@ public class BadgeViewHelper {
             // ordinal()方法返回枚举常量的序数(它在枚举声明,其中初始常量分配的零序位)
             int i = typedArray.getInt(index, mBadgeGravity.ordinal());
             mBadgeGravity=BadgeGravity.values()[i];
+        }else if (index==R.styleable.BadgeView_badge_horizotalMargin){
+            mBagdeHorzontalMargin=typedArray.getDimensionPixelSize(index,mBagdeHorzontalMargin);
+        }else if (index==R.styleable.BadgeView_badge_vertiaclMargin){
+            mBagdeVerticalMargin=typedArray.getDimensionPixelSize(index,mBagdeVerticalMargin);
         }
         mPaint.setTextSize(mBadgeTextSize);
     }
@@ -97,6 +102,8 @@ public class BadgeViewHelper {
         mBadgeRectF=new RectF();
         mBadgeTextSize=BadgeViewUtil.sp2px(context,10);
         mBadgePadding=BadgeViewUtil.dp2px(context,4);
+        mBagdeHorzontalMargin=BadgeViewUtil.dp2px(context,4);
+        mBagdeVerticalMargin=BadgeViewUtil.dp2px(context,4);
         mBadgeGravity=badgeGravity;
         mIsShowBadge=false;
         mBadgeText=null;
@@ -135,14 +142,15 @@ public class BadgeViewHelper {
         //当文本长度为1或0时，计算的高度会大于宽度，此时就让宽高相等
         if (badgeText.length()<=1){
             badgeWidth=badgeHeight;
-            Log.e("BadgeView","badgeWidth--"+badgeWidth);
         }else {
             badgeWidth=mBadgeNumberRect.width()+mBadgePadding*2;
         }
 
         //计算徽章背景上下的值
-        mBadgeRectF.top=0;
-        mBadgeRectF.bottom=mBadgeInterface.getHeight();
+        mBadgeRectF.top=mBagdeVerticalMargin;
+        mBadgeRectF.bottom=mBadgeInterface.getHeight()-mBagdeVerticalMargin;
+
+
         switch (mBadgeGravity){
             case RightTop:
                 mBadgeRectF.bottom=mBadgeRectF.top+badgeHeight;
@@ -155,8 +163,9 @@ public class BadgeViewHelper {
                 mBadgeRectF.top=mBadgeRectF.bottom-badgeHeight;
                 break;
         }
+
         //计算徽章背景左右的值
-        mBadgeRectF.right=mBadgeInterface.getWidth();
+        mBadgeRectF.right=mBadgeInterface.getWidth()-mBagdeHorzontalMargin;
         mBadgeRectF.left=mBadgeRectF.right-badgeWidth;
 
         mPaint.setColor(mBadgeBgColor);

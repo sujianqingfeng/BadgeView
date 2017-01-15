@@ -10,5 +10,7 @@
             <enum name="rightCenter" value="1" />
             <enum name="rightBottom" value="2" />
         </attr>
+        <attr name="badge_horizotalMargin" format="dimension|reference"/>
+        <attr name="badge_vertiaclMargin" format="dimension|reference"/>
     </declare-styleable>
 </resources>

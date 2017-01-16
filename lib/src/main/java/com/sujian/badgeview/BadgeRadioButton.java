@@ -53,4 +53,9 @@ mBadgeViewHelper.hideBadge();
     public boolean isShow() {
         return mBadgeViewHelper.isShow();
     }
+
+    @Override
+    public BadgeViewHelper getBadgeViewHelper() {
+        return mBadgeViewHelper;
+    }
 }

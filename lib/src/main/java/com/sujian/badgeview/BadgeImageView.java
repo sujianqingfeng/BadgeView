@@ -52,4 +52,9 @@ public class BadgeImageView extends ImageView implements BadgeInterface {
     public boolean isShow() {
         return mBadgeViewHelper.isShow();
     }
+
+    @Override
+    public BadgeViewHelper getBadgeViewHelper() {
+        return mBadgeViewHelper;
+    }
 }

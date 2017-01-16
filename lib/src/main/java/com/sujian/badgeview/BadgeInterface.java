@@ -1,5 +1,7 @@
 package com.sujian.badgeview;
 
+import android.content.Context;
+
 /**
  * Author sujian
  * Created at 2017/1/14 14:28
@@ -20,5 +22,9 @@ public interface BadgeInterface {
     int getHeight();
 
     int getWidth();
+
+    Context getContext();
+
+    BadgeViewHelper getBadgeViewHelper();
 
 }

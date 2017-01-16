@@ -17,4 +17,4 @@
 #}
 
 
--keep public Class com.sujian.badgeview.**{*;}
+-keep public class com.sujian.badgeview.**{*;}

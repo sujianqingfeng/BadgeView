@@ -1,1 +1,1 @@
-include ':app', ':lib'
+include ':app', ':badgeview_lib'

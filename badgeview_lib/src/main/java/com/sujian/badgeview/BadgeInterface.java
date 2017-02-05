@@ -1,6 +1,7 @@
 package com.sujian.badgeview;
 
 import android.content.Context;
+import android.view.MotionEvent;
 
 /**
  * Author sujian
@@ -26,5 +27,7 @@ public interface BadgeInterface {
     Context getContext();
 
     BadgeViewHelper getBadgeViewHelper();
+
+    boolean superOnTouchEvent(MotionEvent event);
 
 }

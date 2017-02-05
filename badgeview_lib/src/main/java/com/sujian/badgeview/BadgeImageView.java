@@ -3,6 +3,7 @@ package com.sujian.badgeview;
 import android.content.Context;
 import android.graphics.Canvas;
 import android.util.AttributeSet;
+import android.view.MotionEvent;
 import android.widget.ImageView;
 
 /**
@@ -56,5 +57,10 @@ public class BadgeImageView extends ImageView implements BadgeInterface {
     @Override
     public BadgeViewHelper getBadgeViewHelper() {
         return mBadgeViewHelper;
+    }
+
+    @Override
+    public boolean superOnTouchEvent(MotionEvent event) {
+        return super.onTouchEvent(event);
     }
 }

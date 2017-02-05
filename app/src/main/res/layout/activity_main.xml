@@ -36,26 +36,39 @@
         android:src="@mipmap/ic_launcher"/>
 
 
-    <com.sujian.badgeview.BadgeRadioButton
-        android:id="@+id/radio"
-        android:gravity="center"
-        android:drawableTop="@mipmap/ic_launcher"
-        android:text="radio Buttion"
-        android:button="@null"
-        app:badge_horizotalMargin="24dp"
-        android:background="@null"
-        android:layout_width="100dp"
-        android:layout_height="80dp"/>
+    <RadioGroup
+        android:id="@+id/rg"
+        android:orientation="horizontal"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content">
 
-    <com.sujian.badgeview.BadgeRadioButton
-        android:id="@+id/radio1"
-        android:gravity="center"
-        app:badge_horizotalMargin="22dp"
-        app:badge_textSize="10dp"
-        android:drawableTop="@mipmap/ic_launcher"
-        android:text="radio Buttion"
-        android:button="@null"
-        android:background="@null"
-        android:layout_width="100dp"
-        android:layout_height="80dp"/>
+        <com.sujian.badgeview.BadgeRadioButton
+            android:id="@+id/radio"
+            android:gravity="center"
+            android:drawableTop="@mipmap/ic_launcher"
+            android:text="radio Buttion"
+            android:button="@null"
+
+            android:background="@null"
+            android:layout_weight="1"
+            android:layout_width="0dp"
+            android:layout_height="80dp"/>
+
+        <com.sujian.badgeview.BadgeRadioButton
+            android:id="@+id/radio1"
+            android:gravity="center"
+
+            android:drawableTop="@mipmap/ic_launcher"
+            android:text="radio Buttion"
+            android:button="@null"
+            android:background="@null"
+            android:layout_weight="1"
+            android:layout_width="0dp"
+            android:layout_height="80dp"/>
+
+
+
+    </RadioGroup>
+
+
 </LinearLayout>

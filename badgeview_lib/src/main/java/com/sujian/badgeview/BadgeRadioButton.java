@@ -3,6 +3,8 @@ package com.sujian.badgeview;
 import android.content.Context;
 import android.graphics.Canvas;
 import android.util.AttributeSet;
+import android.util.Log;
+import android.view.MotionEvent;
 import android.widget.RadioButton;
 
 /**
@@ -24,9 +26,15 @@ public class BadgeRadioButton extends RadioButton implements BadgeInterface {
 
     public BadgeRadioButton(Context context, AttributeSet attrs, int defStyleAttr) {
         super(context, attrs, defStyleAttr);
+        setClickable(true);
         mBadgeViewHelper=new BadgeViewHelper(this,context,attrs, BadgeViewHelper.BadgeGravity.RightTop);
     }
 
+
+    @Override
+    public boolean onTouchEvent(MotionEvent event) {
+        return mBadgeViewHelper.onTouchEvent(event);
+    }
 
     @Override
     protected void onDraw(Canvas canvas) {
@@ -57,5 +65,10 @@ mBadgeViewHelper.hideBadge();
     @Override
     public BadgeViewHelper getBadgeViewHelper() {
         return mBadgeViewHelper;
+    }
+
+    @Override
+    public boolean superOnTouchEvent(MotionEvent event) {
+        return super.onTouchEvent(event);
     }
 }

@@ -10,6 +10,7 @@ import android.graphics.RectF;
 import android.text.TextUtils;
 import android.util.AttributeSet;
 import android.util.Log;
+import android.view.MotionEvent;
 
 /**
  * Author sujian
@@ -125,6 +126,14 @@ public class BadgeViewHelper {
                 drawTextBadge(canvas);
         }
     }
+
+
+
+    public boolean onTouchEvent(MotionEvent event){
+        return mBadgeInterface.superOnTouchEvent(event);
+    }
+
+
 
     /**
      * 绘制文字徽章

@@ -228,6 +228,14 @@ public class BadgeViewHelper {
         mBadgeInterface.postInvalidate();
     }
 
+
+    /**
+     * 得到徽章的文本
+     */
+    public String getBadgeText() {
+        return mBadgeText;
+    }
+
     /**
      * 设置徽章的背景颜色
      * @param color 颜色值
